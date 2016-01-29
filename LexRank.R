@@ -48,7 +48,6 @@ lexRank <-function(){
   newsCorpus = Corpus(VectorSource(corp_list))
   dtm <- DocumentTermMatrix(newsCorpus, control = list(weighting = weightTf, normalize = TRUE))
   
-  
   # similarity matrix 
   k <- nrow(dtm)
   p <- length(sents(bio_doc))
@@ -64,17 +63,16 @@ lexRank <-function(){
   # pagerank algorithm 
   M = t(cos / rowSums(cos))
   n = nrow(M)
-  
   U = matrix(data=rep(1/n, n^2), nrow=n, ncol=n) # U is the square matrix which all elements equal to 1\N
   beta=0.85
-  A = beta*U+(1-beta)*M # A is the irreducible aperidic stochastic matrix, we find its eigenvalue to calculate pagerank
+  A = beta*U+(1-beta)*M # M is the irreducible aperidic stochastic matrix, we find its eigenvalue to calculate pagerank
   e = eigen(A) 
   v <- e$vec[,1]
 
   highest<- order(v, decreasing = T)[1:10]
   a <- v[highest]
   
-  # Create list from highest eigenvalue sentences
+  #highest eigenvalue sentences
   summ_list<- list()
   m<-length(highest)
   
