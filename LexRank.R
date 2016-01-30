@@ -1,3 +1,8 @@
+  library(NLP)
+  library(tm)
+  library(openNLP)
+  library(SnowballC)
+  
 #FUNCTIONS
 # Similarity function of lexRank 
 simil_lexRank <- function(x,y){
@@ -7,11 +12,6 @@ simil_lexRank <- function(x,y){
 
 #MAIN FRAME
 lexRank <-function(){
-  
-  library(NLP)
-  library(tm)
-  library(openNLP)
-  library(SnowballC)
   
   doc <- readLines("file.txt")
   doc <- as.String(doc)
