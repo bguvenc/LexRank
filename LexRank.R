@@ -13,7 +13,7 @@ lexRank <-function(){
   library(openNLP)
   library(SnowballC)
   
-  doc <- readLines("sentences.txt")
+  doc <- readLines("file.txt")
   doc <- as.String(doc)
   
   # Word and sentence token annotator 
