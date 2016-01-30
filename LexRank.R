@@ -1,7 +1,7 @@
-  library(NLP)
-  library(tm)
-  library(openNLP)
-  library(SnowballC)
+library(NLP)
+library(tm)
+library(openNLP)
+library(SnowballC)
   
 #FUNCTIONS
 # Similarity function of lexRank 
